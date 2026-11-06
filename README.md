@@ -8,6 +8,8 @@ Given a list of tasks with durations and dependencies, it computes for every tas
 - **LS / LF**: latest start and latest finish (backward pass)
 - **Slack**: how long a task can be delayed without delaying the whole project (LS − ES)
 - **Critical tasks**: the tasks with zero slack, which determine the project duration
+- **Kahn's algorithm**: topological sorting of tasks, so tasks can be given in any order (contaings cycle detection)
+
 
 ## Input
 
@@ -75,9 +77,9 @@ Each task and each dependency is processed once, so the computation is linear in
 - **Unlimited resources.** CPM assumes that tasks without mutual dependencies can run in parallel. With limited people or equipment, a resource-levelling step is needed, and the project may take longer.
 - **Multiple critical paths.** If, for example, task D lasts 6 days instead of 5, both A → C → D → F → H and A → C → E → F → H become critical, and `critical` returns the tasks of both.
 
+
 ## Roadmap
 
-- Topological sorting (Kahn's algorithm), so tasks can be given in any order, with cycle detection
 - List each critical path separately (recursive search)
 - PERT: three-point duration estimates and Monte Carlo simulation of the project duration
 - Resource-constrained scheduling
