@@ -9,6 +9,7 @@ Given a list of tasks with durations and dependencies, it computes for every tas
 - **Slack**: how long a task can be delayed without delaying the whole project (LS − ES)
 - **Critical tasks**: the tasks with zero slack, which determine the project duration
 - **Kahn's algorithm**: topological sorting of tasks, so tasks can be given in any order (contaings cycle detection)
+- **PERT**: three-point duration estimates and Monte Carlo simulation of the project duration
 
 
 ## Input
@@ -81,5 +82,4 @@ Each task and each dependency is processed once, so the computation is linear in
 ## Roadmap
 
 - List each critical path separately (recursive search)
-- PERT: three-point duration estimates and Monte Carlo simulation of the project duration
 - Resource-constrained scheduling
