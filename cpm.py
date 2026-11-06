@@ -1,4 +1,5 @@
 import matplotlib.pyplot as plt
+import numpy as np 
 
 tasks = {
         "G": (4, ["B"]),
@@ -43,11 +44,12 @@ def cpm(tasks):
     
     critical = []
     for name in order:
-        if slack[name] == 0:
+        if np.isclose(slack[name], 0):
             critical.append(name)
         
     return {"ES": ES, "EF": EF, "LS": LS, "LF": LF,
-            "slack": slack, "critical": critical}
+            "slack": slack, "critical": critical, 
+            "project_end": project_end}
 
 
 def successors(tasks):
